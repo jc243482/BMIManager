@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 public class App {
     public static void main(String[] args) {
+        Patient patient = new Patient();
         System.out.println("BMI Manager");
         running: while (true) {
             System.out.println("Please select from the: " +
@@ -17,7 +18,6 @@ public class App {
             Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
             scanner.nextLine();
-            Patient patient = new Patient();
             switch (choice) {
                 case 1: {
                     System.out.println("name: ");
@@ -30,8 +30,8 @@ public class App {
                 }
                 case 2: {
                     System.out.println(String.format("Name: %s Age: %d BMI: %.2f",
-                    patient.getAge(),
                     patient.getName(),
+                    patient.getAge(),
                     patient.getBMI()
                     ));
                     break;
