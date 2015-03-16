@@ -20,20 +20,11 @@ public class App {
             scanner.nextLine();
             switch (choice) {
                 case 1: {
-                    System.out.println("name: ");
-                    patient.setName(scanner.nextLine());
-                    System.out.println("Age: ");
-                    patient.setAge(scanner.nextInt());
-                    System.out.println("Height and Weight: ");
-                    patient.setDetails(scanner.nextDouble(), scanner.nextDouble());
+                    addPatient(patient, scanner);
                     break;
                 }
                 case 2: {
-                    System.out.println(String.format("Name: %s Age: %d BMI: %.2f",
-                    patient.getName(),
-                    patient.getAge(),
-                    patient.getBMI()
-                    ));
+                    viewPatient(patient);
                     break;
                 }
                 case 3: {
@@ -42,5 +33,21 @@ public class App {
                 }
             }
         }
+    }
+    private static void viewPatient (Patient patient) {
+        System.out.println(String.format("Name: %s Age: %d BMI: %.2f",
+                patient.getName(),
+                patient.getAge(),
+                patient.getBMI()
+        ));
+    }
+
+    private static void addPatient(Patient patient, Scanner scanner){
+        System.out.println("name: ");
+        patient.setName(scanner.nextLine());
+        System.out.println("Age: ");
+        patient.setAge(scanner.nextInt());
+        System.out.println("Height and Weight: ");
+        patient.setDetails(scanner.nextDouble(), scanner.nextDouble());
     }
 }
