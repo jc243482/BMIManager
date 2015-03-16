@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 /**
- * Created by jc243482 on 16/03/15.
+ * Created by jc243482, James Baker on 16/03/15.
  */
 public class App {
     public static void main(String[] args) {
